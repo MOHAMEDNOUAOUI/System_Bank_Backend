@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,11 +26,11 @@ public class Demande implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
 
-    @Column(name = "email" , length = 50)
-    private String Email;
+    @Column(name = "monproject")
+    String monproject;
 
-    @Column(name = "phone" , length = 20)
-    private String Phone;
+    @Column(name = "jesuis")
+    String jesuis;
 
     @Column(name = "montant")
     @Positive
@@ -47,8 +48,35 @@ public class Demande implements Serializable {
     @Column(name = "mensualite")
     private double Mensualite;
 
-    @Column(name = "creditType")
-    private String CreditType;
+
+    @Column(name = "email" , length = 50)
+    private String Email;
+
+    @Column(name = "telephone" , length = 20)
+    private String Telephone;
+
+    @Column(name = "civilite")
+    private String Civilite;
+
+    @Column(name = "nom")
+    private String Nom;
+
+    @Column(name = "prenom")
+    private String Prenom;
+
+    @Column(name = "CIN")
+    private String CIN;
+
+    @Column(name = "datenaissance")
+    private LocalDate Datenaissance;
+
+    @Column(name = "datedembauche")
+    private LocalDate Datedebauche;
+
+    @Column(name = "totalrevenue")
+    private double Totalrevenue;
+    
+
 
 
 }

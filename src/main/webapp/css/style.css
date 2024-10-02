@@ -7,6 +7,10 @@
     font-family: "Roboto", sans-serif;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 body {
     background-color: rgb(241, 242, 246);
 }
@@ -160,10 +164,10 @@ body .leftcontainer .leftcontainer-bottomcontainer .Simuler .inputcontainer .inp
 body .leftcontainer .leftcontainer-bottomcontainer .cordonee {
     display: none;
     width: 100%;
-    height: 70vh;
+    height: 46vh;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding-top: 4rem;
     gap: 2rem;
 }
 body .leftcontainer .leftcontainer-bottomcontainer .cordonee .allays {
@@ -200,19 +204,50 @@ body .leftcontainer .leftcontainer-bottomcontainer .cordonee .allays input {
 body .leftcontainer .leftcontainer-bottomcontainer .cordonee .allays input:focus {
     outline: none;
 }
+body .leftcontainer .leftcontainer-bottomcontainer .cordonee button {
+    width: 30%;
+    background-color: rgb(2, 140, 150);
+    color: white;
+    border: 3px solid white;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .cordonee button span {
+    font-size: 0.7rem;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .cordonee button:hover {
+    background-color: rgb(1, 105, 109);
+}
 body .leftcontainer .leftcontainer-bottomcontainer .personnel {
     display: none;
     width: 100%;
     flex-direction: column;
     align-items: center;
-    padding-top: 4rem;
+    justify-content: center;
+    padding: 2rem 4rem;
+    gap: 3rem;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .civilite {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .civilite #civiliteh2 {
+    font-size: 1rem;
+    font-weight: 500;
 }
 body .leftcontainer .leftcontainer-bottomcontainer .personnel .civilite .radios {
     display: flex;
     gap: 1rem;
 }
 body .leftcontainer .leftcontainer-bottomcontainer .personnel .civilite .radios .radio {
-    margin: 0.5rem;
+    display: flex;
 }
 body .leftcontainer .leftcontainer-bottomcontainer .personnel .civilite .radios .radio input[type=radio] {
     position: absolute;
@@ -224,11 +259,9 @@ body .leftcontainer .leftcontainer-bottomcontainer .personnel .civilite .radios 
     border-radius: 100%;
     border: 1px solid #b4b4b4;
     display: inline-block;
-    width: 1.4em;
-    height: 1.4em;
-    position: relative;
-    top: -0.2em;
-    margin-right: 1em;
+    width: 0.9rem;
+    height: 0.9rem;
+    margin-right: 0.3em;
     vertical-align: top;
     cursor: pointer;
     text-align: center;
@@ -238,12 +271,99 @@ body .leftcontainer .leftcontainer-bottomcontainer .personnel .civilite .radios 
     background-color: #3197EE;
     box-shadow: inset 0 0 0 4px #f4f4f4;
 }
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .civilite .radios .radio input[type=radio]:checked + .radio-label {
+    color: rgb(2, 140, 150);
+}
 body .leftcontainer .leftcontainer-bottomcontainer .personnel .civilite .radios .radio input[type=radio]:focus + .radio-label:before {
     outline: none;
     border-color: #3197EE;
 }
 body .leftcontainer .leftcontainer-bottomcontainer .personnel .civilite .radios .radio input[type=radio] + .radio-label:empty:before {
     margin-right: 0;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .civilite .radios .radio input[type=radio] + .radio-label {
+    font-size: 0.9rem;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .fullinputs {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .fullinputs .allays {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .fullinputs .allays label {
+    position: absolute;
+    color: grey;
+    z-index: 1;
+    transition: top 0.4s ease-in-out, color 0.3s ease-in-out, font 0.3s ease-in-out;
+    pointer-events: none;
+    top: 5px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    left: 0.6rem;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .fullinputs .allays label.active {
+    top: -0.6rem;
+    color: #282828;
+    font-size: 0.8rem;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .fullinputs .allays label.date {
+    color: #282828;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .fullinputs .allays input {
+    border: none;
+    border-bottom: 1px solid black;
+    height: 2rem;
+    position: relative;
+    z-index: 2;
+    background-color: transparent;
+    padding-left: 0.6rem;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .fullinputs .allays input:focus {
+    outline: none;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .fullinputs .allays .cordonee_labels_date {
+    position: relative;
+    color: grey;
+    z-index: 1;
+    transition: top 0.4s ease-in-out, color 0.3s ease-in-out, font 0.3s ease-in-out;
+    pointer-events: none;
+    top: 5px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    left: 0.6rem;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .fullinputs .captcha {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .fullinputs .captcha input {
+    margin-top: 0.2rem;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .fullinputs button {
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: auto;
+    background-color: rgb(2, 140, 150);
+    color: white;
+    border: 3px solid white;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    padding: 1rem 1rem;
+}
+body .leftcontainer .leftcontainer-bottomcontainer .personnel .fullinputs button:hover {
+    background-color: rgb(1, 105, 109);
 }
 body .rightcontainer {
     width: 25%;
@@ -296,6 +416,9 @@ body .rightcontainer .Détails p {
     justify-content: space-between;
     border-bottom: 1px solid rgba(0, 0, 0, 0.18);
 }
+body .rightcontainer .Détails p span {
+    color: rgb(2, 140, 150);
+}
 body .rightcontainer .UserDetails h2 {
     background-color: rgb(239, 239, 239);
     padding: 0.5rem;
@@ -310,4 +433,7 @@ body .rightcontainer .UserDetails p {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+}
+body .rightcontainer .UserDetails p span {
+    color: rgb(2, 140, 150);
 }/*# sourceMappingURL=style.css.map */

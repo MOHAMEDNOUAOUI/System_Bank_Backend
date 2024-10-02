@@ -11,7 +11,7 @@ public class EntityManagerFactoryHolder {
 
     static{
         try{
-            entityManagerFactory = Persistence.createEntityManagerFactory("BANK_PU");
+            entityManagerFactory = Persistence.createEntityManagerFactory("BANKPR");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
