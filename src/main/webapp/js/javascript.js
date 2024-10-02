@@ -218,6 +218,7 @@ function nextSection(sectionNumber) {
 function showSection(sectionNumber) {
     section1.style.display = 'none';
     section2.style.display = 'none';
+    section3.style.display = 'none';
 
 
     if(sectionNumber == 1){

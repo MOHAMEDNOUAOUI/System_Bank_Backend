@@ -57,7 +57,7 @@
 
 
                 <div class="montant inputcontainer">
-                    <label for="MontantEnDh">Montant (en DH)</label>
+                    <label for="montant_endh_text_aread">Montant (en DH)</label>
                     <input type="text" value="5000" id="montant_endh_text_aread" class="inputcontainer_input">
                     <input type="range" class="rangeinputs" id="montant_range" min="5000" max="400000" value="10000">
                 </div>
