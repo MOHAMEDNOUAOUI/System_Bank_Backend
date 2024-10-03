@@ -196,20 +196,21 @@ function nextSection(sectionNumber) {
     if(sectionNumber == 2){
         if(AddSection1Data()){
             showSection(sectionNumber);
+            maxSectionReached = 2;
         }
     }
 
     if(sectionNumber==3){
         if(AddSection2Data()){
             showSection(sectionNumber);
+            maxSectionReached = 3;
         }
     }
 
+    console.log(maxSectionReached);
 
 
-    if (sectionNumber > maxSectionReached) {
-        maxSectionReached = sectionNumber;
-    }
+    changingColors(maxSectionReached);
 
 
 }
@@ -220,21 +221,38 @@ function showSection(sectionNumber) {
     section2.style.display = 'none';
     section3.style.display = 'none';
 
+    document.querySelectorAll('.NumbersPickers').forEach((e) => {
+        e.classList.remove('active');
+    })
+
+    changingColors(maxSectionReached);
+    console.log("sectionnumber" + sectionNumber);
+
 
     if(sectionNumber == 1){
+
+        if(!document.querySelector('.first').classList.add('active')){
+            document.querySelector('.first').classList.add('active');
+        }
         section1.style.display = "flex";
     }else if(sectionNumber == 2) {
+        if(!document.querySelector('.second').classList.add('active')){
+            document.querySelector('.second').classList.add('active');
+        }
         section2.style.display = "flex";
     }
     else{
+        document.querySelector('.last').classList.add('active');
         section3.style.display = "flex";
     }
+
+
 
     currentSection = sectionNumber;
 }
 
 
-function goToSection(sectionNumber) {
+function goToSection(e,sectionNumber) {
     if (sectionNumber <= maxSectionReached) {
         showSection(sectionNumber);
     }
@@ -246,12 +264,14 @@ showSection(currentSection);
 
 
 
-
-
-
-
-
-
-
-
-
+function changingColors(maxSectionReached) {
+    if(maxSectionReached == 3){
+        document.querySelector('.first').style.backgroundColor = 'blue';
+        document.querySelector('.second').style.backgroundColor = 'blue';
+        document.querySelector('.last').style.backgroundColor = 'blue';
+    }
+    else if(maxSectionReached ==2){
+        document.querySelector('.second').style.backgroundColor = 'blue';
+        document.querySelector('.first').style.backgroundColor ='blue';
+    }
+}

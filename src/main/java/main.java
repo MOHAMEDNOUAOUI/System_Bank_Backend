@@ -1,25 +1,24 @@
-import org.mohamed.loanv2.config.EntityManagerFactoryHolder;
-import org.mohamed.loanv2.entity.Demande;
-
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
+import org.mohamed.loanv2.config.EntityManagerFactoryHolder;
+import org.mohamed.loanv2.entity.Demande;
 
 public class main {
-
     public static void main(String[] args) {
-        EntityManagerFactory entityManagerFactory = EntityManagerFactoryHolder.getEntityManagerFactory();
-
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
-        EntityTransaction transaction = entityManager.getTransaction();
-        transaction.begin();
+        EntityManager entityManager = EntityManagerFactoryHolder.getEntityManager();
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
 
         Demande demande = new Demande();
-        demande.setEmail("anassnakhli@gmail.com");
+        demande.setEmail("mohamednouaoui5@gmail.com");
+        demande.setTelephone("+212653989456");
+        demande.setMensualite(53000);
 
-        transaction.commit();
+        entityManager.persist(demande);
+        entityTransaction.commit();
+
         entityManager.close();
-        entityManagerFactory.close();
+        EntityManagerFactoryHolder.getEntityManager();
     }
-
 }
